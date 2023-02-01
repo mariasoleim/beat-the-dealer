@@ -1,12 +1,15 @@
 package org.example;
 
 import org.example.domain.Card;
+import org.example.domain.Player;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.stream.Collectors;
 
 public class BeatTheDealer {
     public static void main(String[] args) {
@@ -23,11 +26,14 @@ public class BeatTheDealer {
             }
         }
 
-        var x = Arrays.stream(cardsAsString.split(","))
+        LinkedList<Card> deck = Arrays.stream(cardsAsString.split(","))
                 .map(String::strip)
                 .map(Card::fromString)
-                .toList();
+                .collect(Collectors.toCollection(LinkedList::new));
 
-        System.out.println(x);
+        Game game = new Game(deck);
+        Player winner = game.playAndReturnWinner();
+
+        System.out.println(winner.getName());
     }
 }

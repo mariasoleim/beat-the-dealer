@@ -7,4 +7,8 @@ public record Card(Suit suit, Rank rank) {
         Rank rank = Rank.fromString(cardAsString.substring(1));
         return new Card(suit, rank);
     }
+
+    public int getPointValue() {
+        return rank().getPointValue();
+    }
 }
