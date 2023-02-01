@@ -23,6 +23,8 @@ public class BeatTheDealer {
 
         Player winner = game.playAndReturnWinner();
 
-        System.out.println(winner.getName());
+        System.out.println(winner != null ? winner.getName() : "tie");
+        System.out.println(game.getSam().getName() + ": " + game.getSam().getCardsAsString());
+        System.out.println(game.getDealer().getName() + ": " + game.getDealer().getCardsAsString());
     }
 }

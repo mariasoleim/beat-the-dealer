@@ -26,4 +26,13 @@ public enum Rank {
             return Rank.valueOf(numberAsString);
         }
     }
+
+    @Override
+    public String toString() {
+        if (this.name().startsWith("_")) {
+            return this.name().split("_")[1];
+        } else {
+            return this.name();
+        }
+    }
 }

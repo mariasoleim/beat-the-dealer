@@ -16,6 +16,14 @@ public class Game {
         this.deck = deck;
     }
 
+    public Player getSam() {
+        return sam;
+    }
+
+    public Player getDealer() {
+        return dealer;
+    }
+
     public Player playAndReturnWinner() {
 
         dealCards();

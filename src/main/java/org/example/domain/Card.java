@@ -11,4 +11,9 @@ public record Card(Suit suit, Rank rank) {
     public int getPointValue() {
         return rank().getPointValue();
     }
+
+    @Override
+    public String toString() {
+        return suit.toString() + rank;
+    }
 }

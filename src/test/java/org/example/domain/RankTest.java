@@ -25,4 +25,18 @@ class RankTest {
         Rank rank = Rank.fromString(numberAsString);
         assertEquals(Rank._2, rank);
     }
+
+    @Test
+    void numericNumberToString() {
+        Rank rank = Rank._2;
+        String numberAsString = rank.toString();
+        assertEquals("2", numberAsString);
+    }
+
+    @Test
+    void faceNumberToString() {
+        Rank rank = Rank.J;
+        String numberAsString = rank.toString();
+        assertEquals("J", numberAsString);
+    }
 }
