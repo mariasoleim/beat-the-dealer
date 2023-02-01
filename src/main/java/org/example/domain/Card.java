@@ -8,8 +8,8 @@ public record Card(Suit suit, Rank rank) {
         Suit suit;
         Rank rank;
         try {
-            suit = Suit.valueOf(cardAsString.substring(0,1));
-            rank = Rank.fromString(cardAsString.substring(1));
+            suit = Suit.valueOf(cardAsString.substring(0,1).toUpperCase());
+            rank = Rank.fromString(cardAsString.substring(1).toUpperCase());
         } catch (Exception e) {
             throw new NotAValidCardException(cardAsString);
         }

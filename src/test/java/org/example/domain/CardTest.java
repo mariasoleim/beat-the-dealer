@@ -15,4 +15,14 @@ class CardTest {
         assertEquals(Suit.D, suit);
         assertEquals(Rank._5, rank);
     }
+
+    @Test
+    void testFromStringWithLowerCase() {
+        String cardAsString = "d5";
+        Card card = Card.fromString(cardAsString);
+        Suit suit = card.suit();
+        Rank rank = card.rank();
+        assertEquals(Suit.D, suit);
+        assertEquals(Rank._5, rank);
+    }
 }
